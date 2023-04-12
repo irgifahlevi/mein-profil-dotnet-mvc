@@ -1,0 +1,21 @@
+﻿@model StudentProjectMeinProfil.Models.UserProfile
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>User public</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <a>Full Name</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+    </dl>
+</div>
+<div> |
+    <a asp-action="Index">Back to List</a>
+</div>

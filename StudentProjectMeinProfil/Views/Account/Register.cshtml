@@ -1,0 +1,80 @@
+﻿@model StudentProjectMeinProfil.Models.RegisterView
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutLoginRegister.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-2 p-sm-5">
+                    <h2 class="card-title text-center mb-3 fw-bold fs-7">Register new user</h2>
+                    <form asp-action="Register" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ProfileUrl" value="UserName" />
+                        <span asp-validation-for="ProfileUrl" class="text-danger"></span>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <label class="form-label" asp-for="FullName">Full Name</label>
+                                <input type="text" class="form-control" asp-for="FullName">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" asp-for="UserName">Username</label>
+                                <input type="text" class="form-control" asp-for="UserName">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <label class="form-label" asp-for="Password">Password</label>
+                                <input type="password" class="form-control" asp-for="Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" asp-for="Email">Email</label>
+                                <input type="email" class="form-control" asp-for="Email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <label class="form-label" for="ImagePath">Photo profile</label>
+                                <input type="file" class="form-control" name="ImagePath">
+                            </div>
+                            <div class="col">
+                                <label class="form-label" asp-for="BrithDate">Brith date</label>
+                                <input type="date" class="form-control" asp-for="BrithDate">
+                                <span asp-validation-for="BrithDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" asp-for="PhoneNumber">Phone number</label>
+                            <input type="number" class="form-control" asp-for="PhoneNumber">
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" asp-for="Address">Address</label>
+                            <textarea class="form-control" rows="3" asp-for="Address"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="text-center">
+                            <p>
+                                Sign In? <a asp-controller="Account" asp-action="Login">Login</a>
+                            </p>
+                        </div>
+                        <hr class="my-4">
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-login fw-bold" type="submit" value="Create">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
