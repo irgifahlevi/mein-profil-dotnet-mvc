@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nxsRjVwsoHgJR95fraGFuejlnw1EDnq5rosJvyuGnRs=",
+  "Hash": "2gds8xirBwaigXoouHJsq5QilbhUianFA3bljfrQPGE=",
   "Source": "StudentProjectMeinProfil",
   "BasePath": "_content/StudentProjectMeinProfil",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\Image\\Profile\\github.png"
     },
     {
+      "Identity": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\icons8-male-60 (3).png",
+      "SourceId": "StudentProjectMeinProfil",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\",
+      "BasePath": "_content/StudentProjectMeinProfil",
+      "RelativePath": "Image/Profile/icons8-male-60 (3).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\Profile\\icons8-male-60 (3).png"
+    },
+    {
       "Identity": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\linkedin.png",
       "SourceId": "StudentProjectMeinProfil",
       "SourceType": "Discovered",
@@ -236,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Image\\Profile\\shopping-online.png"
+    },
+    {
+      "Identity": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\trash.png",
+      "SourceId": "StudentProjectMeinProfil",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\",
+      "BasePath": "_content/StudentProjectMeinProfil",
+      "RelativePath": "Image/Profile/trash.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\Profile\\trash.png"
     },
     {
       "Identity": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\js\\site.js",

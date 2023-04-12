@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\Image\\Profile\\github.png"
     },
     {
+      "Id": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\icons8-male-60 (3).png",
+      "PackagePath": "staticwebassets\\Image\\Profile\\icons8-male-60 (3).png"
+    },
+    {
       "Id": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\linkedin.png",
       "PackagePath": "staticwebassets\\Image\\Profile\\linkedin.png"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\shopping-online.png",
       "PackagePath": "staticwebassets\\Image\\Profile\\shopping-online.png"
+    },
+    {
+      "Id": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\Image\\Profile\\trash.png",
+      "PackagePath": "staticwebassets\\Image\\Profile\\trash.png"
     },
     {
       "Id": "F:\\Bootcamp-Rapid\\Day8\\StudentProjectMeinProfil\\StudentProjectMeinProfil\\wwwroot\\css\\site.css",

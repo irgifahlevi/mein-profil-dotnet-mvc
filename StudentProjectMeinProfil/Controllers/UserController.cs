@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StudentProjectMeinProfil.Models;
 
 namespace StudentProjectMeinProfil.Controllers
@@ -18,33 +19,7 @@ namespace StudentProjectMeinProfil.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public async Task<IActionResult> GetImage(string imageName)
-        {
-            try
-            {
-                var path = Path.Combine(_webHostEnvironment.WebRootPath, "Image/Profile", imageName);
-                var fileStream = new FileStream(path, FileMode.Open);
-                var fileExtension = Path.GetExtension(path);
-                return File(fileStream, $"image/{fileExtension}");
-            }
-            catch (Exception ex)
-            {
-                // Handle the exception
-                return BadRequest(ex.Message);
-            }
-        }
-
-
-        [HttpGet]
-        public async Task<IActionResult> View()
-        {
-            // get current user
-            var user = await _userManager.GetUserAsync(HttpContext.User);
-
-            // return view with user profile data
-            return View(user);
-        }
-
+        
         [Authorize]
         [Route("user/{id}")]
         public async Task<IActionResult> Profile(string id)
@@ -112,6 +87,57 @@ namespace StudentProjectMeinProfil.Controllers
             };
 
             return View(userProfile);
+        }
+
+
+        [Authorize]
+        [HttpPost("{id}")]
+        public async Task<IActionResult> UpdateProfile(string id, UserProfile model, List<IFormFile> profilePath)
+        {
+            var path = _webHostEnvironment.WebRootPath + "/Image/Profile/";
+
+            if (profilePath.Count > 0)
+            {
+                var fileTarget = path + profilePath[0].FileName;
+                using (var stream = new FileStream(fileTarget, FileMode.Create))
+                {
+                    await profilePath[0].CopyToAsync(stream);
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                var currentUser = await _userManager.GetUserAsync(HttpContext.User);
+                if (currentUser.Id != id)
+                {
+                    return RedirectToAction("AccessDenied", "Account");
+                }
+
+                currentUser.FullName = model.FullName;
+                currentUser.UserName = model.UserName;
+                currentUser.Email = model.Email;
+                currentUser.Address = model.Address;
+                currentUser.BrithDate = model.BrithDate;
+                currentUser.PhoneNumber = model.PhoneNumber;
+                currentUser.ProfileUrl = profilePath[0].FileName;
+
+                var result = await _userManager.UpdateAsync(currentUser);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Profile", "User", new { id = currentUser.Id });
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+            }
+
+            return View(model);
+
         }
     }
 }

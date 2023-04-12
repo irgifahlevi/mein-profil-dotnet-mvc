@@ -23,6 +23,25 @@ namespace StudentProjectMeinProfil.Controllers
             _environment = environment;
         }
 
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var users = _userManager.Users.ToList();
+            var userViewModels = new List<UsersIndex>();
+            foreach (var user in users)
+            {
+                var userViewModel = new UsersIndex
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    FullName = user.FullName
+                };
+                userViewModels.Add(userViewModel);
+            }
+            return View(userViewModels);
+        }
+
+
 
         public IActionResult Register()
         {

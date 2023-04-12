@@ -5,7 +5,6 @@ namespace StudentProjectMeinProfil.Models
 {
     public class RegisterView
     {
-        [Required]
         public string FullName { set; get; }
         public string UserName { set; get; }
         public string Password { get; set; }

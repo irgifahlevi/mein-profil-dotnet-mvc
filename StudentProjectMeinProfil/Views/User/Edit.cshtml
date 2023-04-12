@@ -4,55 +4,63 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h4>Edit profile</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProfileUrl" class="control-label"></label>
-                <input asp-for="ProfileUrl" class="form-control" />
-                <span asp-validation-for="ProfileUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BrithDate" class="control-label"></label>
-                <input asp-for="BrithDate" class="form-control" />
-                <span asp-validation-for="BrithDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-dark p-4 rounded-2 shadow-sm">
+            <h1 class="text-center">Edit user</h1>
+            <form asp-controller="User" asp-action="UpdateProfile" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger text-center"></div>
+                <input asp-for="Id" type="hidden" class="form-control" readonly />
+                <input type="hidden" asp-for="ProfileUrl" value="@Model.ProfileUrl" />
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label"></label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BrithDate" class="control-label"></label>
+                    <input asp-for="BrithDate" class="form-control" />
+                    <span asp-validation-for="BrithDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="row mb-2 mt-3">
+                    <div class="col-8">
+                        <div class="form-group">
+                            <label class="control-label"></label>
+                            <input name="profilePath" id="profilePath" class="form-control" type="file" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img src="~/Image/Profile/@Model.ProfileUrl" style="width:100px;height:100px;border:1px solid red; border-radius:10px;padding:10px;" alt="Product" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary float-end" />
+                </div>
+                <a class="p-2 m-2" asp-controller="User" asp-action="Profile" asp-route-id="@Model.Id">Back to profile</a>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-controller="User" asp-action="Profile" asp-route-id="@Model.Id">Back to profile</a>
-</div>
 
